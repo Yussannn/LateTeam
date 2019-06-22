@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
                 rb.AddForce(transform.up * thrust);
                 if(rb.velocity.magnitude > 0)
                 {
-                    rb.AddForce(transform.forward * thrust + transform.up * thrust / 10);
+                    rb.AddForce(transform.forward * thrust/2 + transform.up * thrust);
                 }
             }
         }
