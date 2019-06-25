@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubFollowCamera : MonoBehaviour
+public class FollowCamera : MonoBehaviour
 {
     public GameObject player;
     public Vector3 playerVec;
@@ -15,6 +15,6 @@ public class SubFollowCamera : MonoBehaviour
     void Update()
     {
         playerVec = player.transform.position;
-        transform.position = new Vector3(playerVec.x, playerVec.y - 5f, playerVec.z + 10f);
+        transform.position = new Vector3(playerVec.x, playerVec.y + 5f, playerVec.z - 10f);
     }
 }
