@@ -22,29 +22,8 @@ public class SubPlayer : MonoBehaviour
     {
         if (ground)
         {
-            float x, z;
-            //float x = -Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
-            //float z = -Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                x = 1 * Time.deltaTime * speed;
-            }
-            else if (Input.GetKeyDown(KeyCode.K))
-            {
-                x = -1 * Time.deltaTime * speed;
-            }
-
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                z = 1 * Time.deltaTime * speed;
-            }
-            else if (Input.GetKeyDown(KeyCode.L))
-            {
-                z = -1 * Time.deltaTime * speed;
-            }
-
-            rb.MovePosition(transform.position + new Vector3(x, 0, z));
+            float x = -Input.GetAxisRaw("SubHorizontal") * Time.deltaTime * speed;
+            float z = -Input.GetAxisRaw("SubVertical") * Time.deltaTime * speed;
             Vector3 dir = transform.position - p_Pos;
             if (dir.magnitude > 0.01f)
             {

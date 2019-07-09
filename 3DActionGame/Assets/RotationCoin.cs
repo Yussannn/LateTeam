@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class RotationCoin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float angle;
     void Update()
     {
-        
+        angle += 1f * Time.deltaTime;
+        this.transform.Rotate(0f,angle,0f);
     }
 }

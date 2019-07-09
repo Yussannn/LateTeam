@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class Player : MonoBehaviour
     Vector3 p_Pos;
     bool ground;
 
+    public Text scoreText;
+
+    int score = 0;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,6 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        scoreText.text = "" + score;
         if (ground)
         {
             float x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
@@ -59,5 +66,19 @@ public class Player : MonoBehaviour
     {
         ground = false;
         anim.SetBool("Jumping", true);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "goldcoin")
+        {
+            score += 2;
+            Destroy(col.gameObject);
+        }
+        if(col.gameObject.name == "silvercoin")
+        {
+            score++;
+            Destroy(col.gameObject);
+        }
     }
 }
