@@ -1,0 +1,9 @@
+
+=== Sat Jul 20 15:18:12 2019
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.postprocessing@2.0.15-preview
+  com.unity.progrids@3.0.3-preview.0
