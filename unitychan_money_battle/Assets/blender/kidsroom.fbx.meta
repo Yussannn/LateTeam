@@ -1,23 +1,28 @@
 fileFormatVersion: 2
-guid: c8e3493d9e5fe124ba1d347c52c68ddb
+guid: ea2ab88534551ae48a3cec7de0d8adf8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: default
+    100000: Camera
     100002: //RootNode
-    400000: default
+    100004: Lamp
+    100006: "\u5E73\u9762.003"
+    400000: Camera
     400002: //RootNode
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
-    2186277476908879412: ImportLogs
+    400004: Lamp
+    400006: "\u5E73\u9762.003"
+    2000000: Camera
+    2100000: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    2300000: "\u5E73\u9762.003"
+    3300000: "\u5E73\u9762.003"
+    4300000: "\u5E73\u9762.003"
+    10800000: Lamp
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: c8e3493d9e5fe124ba1d347c52c68ddb, type: 3}
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    second: {fileID: 2100000, guid: ea2ab88534551ae48a3cec7de0d8adf8, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

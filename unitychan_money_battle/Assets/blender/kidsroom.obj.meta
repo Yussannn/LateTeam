@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8e3493d9e5fe124ba1d347c52c68ddb
+guid: fad39d15d7f8a1a4a8cba8ef69203f95
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,17 +7,22 @@ ModelImporter:
     100002: //RootNode
     400000: default
     400002: //RootNode
-    2100000: defaultMat
+    2100000: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    2100002: "\u30DE\u30C6\u30EA\u30A2\u30EB_wood_floor.jpg"
     2300000: default
     3300000: default
     4300000: default
-    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: c8e3493d9e5fe124ba1d347c52c68ddb, type: 3}
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    second: {fileID: 2100000, guid: fad39d15d7f8a1a4a8cba8ef69203f95, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB_wood_floor.jpg"
+    second: {fileID: 2100002, guid: fad39d15d7f8a1a4a8cba8ef69203f95, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

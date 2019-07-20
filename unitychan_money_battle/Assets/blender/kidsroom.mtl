@@ -1,0 +1,24 @@
+# Blender MTL File: 'kidsroom.blend'
+# Material Count: 2
+
+newmtl マテリアル
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\K018A1518\Pictures\ae46b1f460ee46f789c27b264a6cb4211.jpg
+
+newmtl マテリアル_wood_floor.jpg
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\K018A1518\Desktop\textures\wood_floor.jpg
