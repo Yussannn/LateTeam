@@ -12,7 +12,7 @@ public class PointCoin : MonoBehaviour
             Destroy(col.gameObject);
             playerPoint += 2;
         }
-        else if(col.gameObject.name == "silvercoin")
+        else if(col.gameObject.name == "silverCoin")
         {
             Destroy(col.gameObject);
             playerPoint += 1;
