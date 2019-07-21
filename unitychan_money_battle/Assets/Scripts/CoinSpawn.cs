@@ -21,14 +21,16 @@ public class CoinSpawn : MonoBehaviour
 
         if(time <= 0.0f)
         {
-            int kakuritu = Random.Range(3, 10);
-            if(kakuritu < 3)
+            int kakuritu = Random.Range(1, 10);
+            if(kakuritu > 4)
             {
                 Instantiate(silver, transform.position, Quaternion.identity);
+                time = Random.Range(1.0f, 9.9f);
             }
             else
             {
                 Instantiate(gold, transform.position, Quaternion.identity);
+                time = Random.Range(1.0f, 9.9f);
             }
         }
     }
