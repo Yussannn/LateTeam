@@ -7,7 +7,7 @@ public class CoinSpawn : MonoBehaviour
     public GameObject gold;
     public GameObject silver;
 
-    float time = Random.Range(1.0f, 9.9f);
+    float time = Random.Range(1.0f, 7.0f);
     // Start is called before the first frame update
     void Start()
     {
