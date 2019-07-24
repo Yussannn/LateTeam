@@ -9,7 +9,7 @@ public class ItemUse : MonoBehaviour
     Vector3 UnityChanPos;
     Vector3 ItemThrow;
     public Transform itempos;
-    public float itemspeed = 1000;
+    public float itemspeed = 100;
     Rigidbody rb;
 
     void Update()
@@ -23,6 +23,7 @@ public class ItemUse : MonoBehaviour
             {
                 GameObject items = Instantiate(item) as GameObject;
                 items.GetComponent<Rigidbody>().AddForce(ItemThrow);
+                //items.transform.position = ItemThrow;
                 items.transform.position = itempos.position;
             }
         }
