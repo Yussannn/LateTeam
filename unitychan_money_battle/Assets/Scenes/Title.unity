@@ -7115,6 +7115,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 55d4e3e6b9e9e5a4081a4c08e9ff635e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b44dd7d90640577478bd567180c7c25b, type: 3}
+--- !u!20 &970850984 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: baec086904791744185aaa07a6cf55c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1740719403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &975243278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8133,7 +8139,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 970850984}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -11859,8 +11865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224, y: 116}
-  m_SizeDelta: {x: 600, y: 600}
+  m_AnchoredPosition: {x: -178.9, y: 116}
+  m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546960244
 MonoBehaviour:
