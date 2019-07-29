@@ -17,6 +17,7 @@ public class TextClean : MonoBehaviour
     float a_color;
     float a_color2;
     float DelayTime = 3.0f;
+    public Image irast;
     // Use this for initialization
     void Start()
     {
@@ -80,6 +81,7 @@ public class TextClean : MonoBehaviour
             {
                 //テキストの透明度を変更する
                 AtText.color = new Color(255, 255, 255, a_color2);
+                irast.color = new Color(255, 255, 255, a_color2);
                 a_color2 += Time.deltaTime;
                 //透明度が0になったら終了する。
                 if (a_color2 >= 1)

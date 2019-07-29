@@ -17,6 +17,10 @@ public class SpaceToStart: MonoBehaviour
     //bool destroySwitch;
     public static bool destroyCheck;
 
+
+    //いきなりバトル
+    bool battle_flag;
+
     private enum ObjType
     {
         TEXT,
@@ -40,6 +44,8 @@ public class SpaceToStart: MonoBehaviour
             thisObjType = ObjType.TEXT;
             text = this.gameObject.GetComponent<Text>();
         }
+
+        battle_flag = false;
     }
 
     void Update()
@@ -49,6 +55,12 @@ public class SpaceToStart: MonoBehaviour
         {
             speed = 10.0f;
             Invoke("DestroyOfSwitch", 2.5f);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightShift))
+        {
+            speed = 10.0f;
+            Invoke("DestroyOfSwitch", 2.5f);
+            battle_flag = true;
         }
 
         //オブジェクトのAlpha値を更新
@@ -66,7 +78,14 @@ public class SpaceToStart: MonoBehaviour
     {
         Destroy(gameObject);
         destroyCheck = true;
-        SceneManager.LoadScene("BlocksStage");
+        if (!battle_flag)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        if (battle_flag)
+        {
+            SceneManager.LoadScene("BlocksStage");
+        }
     }
 
     //Alpha値を更新してColorを返す

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PointCoin2 : MonoBehaviour
 {
     int playerPoint = 0;
-    public Text Pointtext;
+    public Text Pointtext2;
     bool coinget;
 
     void Update()
     {
-        Pointtext.text = "" + playerPoint;
+        Pointtext2.text = "" + playerPoint;
     }
 
     void OnCollisionEnter(Collision col)
