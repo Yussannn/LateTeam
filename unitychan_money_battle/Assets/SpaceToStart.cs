@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpaceToStart: MonoBehaviour
 {
@@ -65,6 +66,7 @@ public class SpaceToStart: MonoBehaviour
     {
         Destroy(gameObject);
         destroyCheck = true;
+        SceneManager.LoadScene("BlocksStage");
     }
 
     //Alpha値を更新してColorを返す

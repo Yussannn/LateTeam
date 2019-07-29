@@ -64,7 +64,7 @@ public class TextClean : MonoBehaviour
             if (!a_flag2)
             {
                 //テキストの透明度を変更する
-                Attention.color = new Color(255, 255, 255, a_color);
+                Attention.color = new Color(255, 66, 64, a_color);
                 a_color += Time.deltaTime;
                 //透明度が0になったら終了する。
                 if (a_color > 1)
