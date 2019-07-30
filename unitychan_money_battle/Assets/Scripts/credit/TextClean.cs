@@ -55,6 +55,7 @@ public class TextClean : MonoBehaviour
             if (a_color < 0)
             {
                 a_color = 0;
+                Destroy(Qtext);
                 DelayTime = 2f;
                 a_Qtext = true;
             }
