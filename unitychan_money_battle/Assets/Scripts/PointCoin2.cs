@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class PointCoin2 : MonoBehaviour
 {
-    int playerPoint = 0;
+    public static int playerPoint;
     public Text Pointtext2;
     bool coinget;
 
+    void Start()
+    {
+        playerPoint = 0;
+    }
     void Update()
     {
         Pointtext2.text = "" + playerPoint;
