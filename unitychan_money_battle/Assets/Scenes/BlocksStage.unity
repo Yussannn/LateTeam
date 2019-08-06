@@ -18387,6 +18387,10 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 2139102998}
+    - target: {fileID: 100002, guid: baec086904791744185aaa07a6cf55c2, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
 --- !u!1001 &2099775745
@@ -18807,7 +18811,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2139102984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
+  m_Script: {fileID: 11500000, guid: ef5505c62fe976541a2107c6da98738c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &2139102989

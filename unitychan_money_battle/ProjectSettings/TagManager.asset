@@ -9,6 +9,7 @@ TagManager:
   - GoldColin
   - Player1
   - Player2
+  - MainCamera2
   layers:
   - Default
   - TransparentFX
