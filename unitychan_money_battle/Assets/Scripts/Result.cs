@@ -17,6 +17,7 @@ public class Result : MonoBehaviour
     public Text DrawText;
     public Text P1_Winner;
     public Text P2_Winner;
+    public Text OnemoreText;  //①
     public Vector3 p1pos;
     public Vector3 p2pos;
     public GameObject GoldCoin;
@@ -32,6 +33,10 @@ public class Result : MonoBehaviour
     bool draw;
     bool player1Count;
     bool player2Count;
+    bool player1CountReady;
+    bool player2CountReady;
+    public bool battle;　　//①
+    public static bool ScEnd;
     void Start()
     {
         Player1Point = PointCoin.playerPoint;
@@ -40,14 +45,17 @@ public class Result : MonoBehaviour
         win2P = false;
         Result_T = false;
         Player_T = false;
+        ScEnd = false;
         waitTime = 2.0f;
+        P1_Winner.enabled = false;
+        P2_Winner.enabled = false;
     }
 
     void Update()
     {
         waitTime -= Time.deltaTime;
-        P1_Point.text = "" + Player1P;
-        P2_Point.text = "" + Player2P;
+        P1_Point.text = Player1P.ToString();
+        P2_Point.text = Player2P.ToString();
         if (CountStart && !CountEnd)
         {
             //player1のポイントを2で割ったときの余り
@@ -60,7 +68,7 @@ public class Result : MonoBehaviour
                     Instantiate(GoldCoin, p1pos, Quaternion.identity);
                     Player1P += 2;
                 }
-                Invoke("WinText", 2.0f);
+                player1CountReady = true;
             }
             if (Player2Point > 1)
             {
@@ -69,26 +77,41 @@ public class Result : MonoBehaviour
                     Instantiate(GoldCoin, p2pos, Quaternion.identity);
                     Player2P += 2;
                 }
-                Invoke("WinText", 2.5f);
+                player2CountReady = true;
             }
             if(p1amari == 1)
             {
                 Instantiate(SilverCoin, p1pos, Quaternion.identity);
                 Player1P++;
+                player1CountReady = true;
             }
             if (p2amari == 1)
             {
                 Instantiate(SilverCoin, p2pos, Quaternion.identity);
                 Player2P++;
+                player2CountReady = true;
             }
+            if(Player1Point == 0)
+            {
+                player1CountReady = true;
+            }
+            if (Player2Point == 0)
+            {
+                player2CountReady = true;
+            }
+
             CountEnd = true;
+        }
+        if (player2CountReady && player1CountReady)
+        {
+            Invoke("WinText", 2.5f);
         }
 
         if (CountEnd)
         {
             if (draw)
             {
-                DrawText.color = new Color(DrawText.color.r, DrawText.color.g, DrawText.color.b, 255);
+                Invoke("DrawText_Active",2.5f);
             }
         }
 
@@ -117,14 +140,6 @@ public class Result : MonoBehaviour
             P2_Winner.text = "2P Win!!";
             P2_Winner.color = new Color(255, 40, 70);
         }
-
-        if (Result_T)
-        {
-            P1_Point.color = new Color(P1_Point.color.r, P1_Point.color.g, P1_Point.color.b, 255);
-            P2_Point.color = new Color(P2_Point.color.r, P2_Point.color.g, P2_Point.color.b, 255);
-            P1_Text_B.SetActive(true);
-            P2_Text_B.SetActive(true);
-        }
     }
     void BoolUpdate()
     {
@@ -133,7 +148,7 @@ public class Result : MonoBehaviour
         if (Result_T)
         {
             Player_T = true;
-            waitTime = 1.0f;
+            waitTime = 1.0f;　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
             if (Player_T)
             {
                 CountStart = true;
@@ -143,11 +158,18 @@ public class Result : MonoBehaviour
 
     void WinText()
     {
-        P1_Winner.color = new Color(P1_Winner.color.r, P1_Winner.color.g, P1_Winner.color.b, 255);
-        P2_Winner.color = new Color(P2_Winner.color.r, P2_Winner.color.g, P2_Winner.color.b, 255);
+        P1_Winner.enabled = true;
+        P2_Winner.enabled = true;
+        Invoke("End",2);
     }
     void DrawText_Active()
     {
         DrawText.color = new Color(DrawText.color.r, DrawText.color.g, DrawText.color.b, 255);
+        Invoke("End", 2);
+    }
+
+    void End()
+    {
+        ScEnd = true;
     }
 }
