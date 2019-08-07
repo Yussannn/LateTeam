@@ -15,15 +15,37 @@ public class TimerScript : MonoBehaviour
     bool color = false;
     bool finish;
 
+    bool gameStart;
+
     void Start()
     {
         FinishText.SetActive(false);
         Player1 = GameObject.FindWithTag("Player1");
         Player2 = GameObject.FindWithTag("Player2");
+        Player1.GetComponent<ThirdPersonUserControl>().enabled = false;
+        Player1.GetComponent<ItemUse>().enabled = false;
+        Player1.GetComponent<ThirdPersonCharacter>().enabled = false;
+        Player1.GetComponent<PointCoin>().enabled = false;
+        Player2.GetComponent<ThirdPersonUserControl2>().enabled = false;
+        Player2.GetComponent<ItemUse>().enabled = false;
+        Player2.GetComponent<ThirdPersonCharacter>().enabled = false;
+        Player2.GetComponent<PointCoin2>().enabled = false;
     }
     void FixedUpdate()
     {
-        Timer -= Time.deltaTime;
+        gameStart = CountDown.CountEnd;
+        if (gameStart)
+        {
+            Timer -= Time.deltaTime;
+            Player1.GetComponent<ThirdPersonUserControl>().enabled = true;
+            Player1.GetComponent<ItemUse>().enabled = true;
+            Player1.GetComponent<ThirdPersonCharacter>().enabled = true;
+            Player1.GetComponent<PointCoin>().enabled = true;
+            Player2.GetComponent<ThirdPersonUserControl2>().enabled = true;
+            Player2.GetComponent<ItemUse>().enabled = true;
+            Player2.GetComponent<ThirdPersonCharacter>().enabled = true;
+            Player2.GetComponent<PointCoin2>().enabled = true;
+        }
         if(Timer <= 0.1f)
         {
             finish = true;
@@ -31,7 +53,7 @@ public class TimerScript : MonoBehaviour
             Player1.GetComponent<ItemUse>().enabled = false;
             Player1.GetComponent<ThirdPersonCharacter>().enabled = false;
             Player1.GetComponent<PointCoin>().enabled = false;
-            Player2.GetComponent<ThirdPersonUserControl>().enabled = false;
+            Player2.GetComponent<ThirdPersonUserControl2>().enabled = false;
             Player2.GetComponent<ItemUse>().enabled = false;
             Player2.GetComponent<ThirdPersonCharacter>().enabled = false;
             Player2.GetComponent<PointCoin2>().enabled = false;
