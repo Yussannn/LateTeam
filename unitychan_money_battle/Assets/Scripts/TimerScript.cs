@@ -68,7 +68,6 @@ public class TimerScript : MonoBehaviour
             FinishText.SetActive(true);
             Invoke("ResultSceneMove", 3.5f);
         }
-        Debug.Log(finish);
         TimerText.text = Timer.ToString();
     }
     void ResultSceneMove()

@@ -56,8 +56,9 @@ public class CountDown : MonoBehaviour
 
     void Delete()
     {
-        Destroy(text);
-        Destroy(text2);
-        Destroy(text3);
+        text.GetComponent<CountDown>().enabled = false;
+        text.enabled = false;
+        text2.enabled = false;
+        text3.enabled = false;
     }
 }

@@ -17,7 +17,6 @@ public class PointCoin : MonoBehaviour
     void Update()
     {
         Pointtext.text = "" + playerPoint;
-        Debug.Log(playerPoint);
     }
 
     void OnCollisionEnter(Collision col)

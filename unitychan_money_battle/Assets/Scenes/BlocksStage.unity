@@ -7738,6 +7738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A_Item: {fileID: 0}
   B_Item: {fileID: 0}
+  itempos: {fileID: 0}
+  itemspeed: 100
 --- !u!1 &894815592
 GameObject:
   m_ObjectHideFlags: 0
@@ -9716,7 +9718,7 @@ RectTransform:
   - {fileID: 478660746}
   - {fileID: 168513656}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9933,7 +9935,7 @@ Transform:
   - {fileID: 36624024}
   - {fileID: 677459214}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1112768100
 PrefabInstance:
@@ -19025,6 +19027,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A_Item: {fileID: 0}
   B_Item: {fileID: 0}
+  itempos: {fileID: 0}
+  itemspeed: 100
 --- !u!114 &2139102986
 MonoBehaviour:
   m_ObjectHideFlags: 0

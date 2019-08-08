@@ -5,21 +5,49 @@ using UnityEngine;
 public class ItemUse : MonoBehaviour        // 1 P 専 用
 {
     int MaxValue; //アイテムの種類
+    int ChoiceNumber; //選択しているアイテム
+
+    //_/_/_/_/_/_/ここでアイテム追加
     public GameObject A_Item;
     public GameObject B_Item;
 
     private List<GameObject> ItemList = new List<GameObject>();
 
+    Vector3 UnityChanPos;
+    Vector3 ItemThrow;
+    public Transform itempos;
+    public float itemspeed = 100;
+    Rigidbody rb;
+
     void Start()
     {
+        //_/_/_/_/_/_/ここでアイテム追加②
         ItemList.Add(A_Item);
         ItemList.Add(B_Item);
+
         MaxValue = ItemList.Count;
     }
 
     void Update()
     {
-        //Rキーを押して、選んで、MAxvalueと同じ値で0に戻す！
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(ChoiceNumber == MaxValue)
+            {
+                ChoiceNumber = 0;
+            }
+            else
+            {
+                ChoiceNumber++;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //GameObject Item = ItemList<>();
+           // GameObject items = Instantiate(Item) as GameObject;
+            //items.GetComponent<Rigidbody>().AddForce(ItemThrow);
+            //items.transform.position = itempos.position;
+        }
     }
 
     /*

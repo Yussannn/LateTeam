@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using GamepadInput;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -47,7 +48,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Player1_Horizontal");
+            h = Input.GetAxis("Player1_Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Player1_Vertical");
+            v = Input.GetAxis("Player1_Vertical");
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character

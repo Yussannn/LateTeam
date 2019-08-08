@@ -37,7 +37,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("SubJump");
             }
         }
 
@@ -64,7 +64,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 #if !MOBILE_INPUT
             // walk speed multiplier
-            if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
+            //if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
 #endif
 
             // pass all parameters to the character control script
