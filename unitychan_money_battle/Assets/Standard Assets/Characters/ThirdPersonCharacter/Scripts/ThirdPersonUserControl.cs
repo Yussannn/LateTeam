@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using GamepadInput;
-namespace GamepadInput{ }
+using InControl;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -14,7 +13,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
-        
+        public InputDevice Device { get; set; }
+
         private void Start()
         {
             // get the transform of the main camera
@@ -38,7 +38,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = Device.Action4.IsPressed;
             }
         }
 
@@ -46,10 +46,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            /*
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            float h = CrossPlatformInputManager.GetAxis("joystick 1 analog 1");
+            float v = CrossPlatformInputManager.GetAxis("joystick 1 analog 0");
             bool crouch = CrossPlatformInputManager.GetButton("Crouching");
+            */
+
+            float h = Device.LeftStickX;
+            float v = Device.LeftStickY;
+            bool crouch = Device.Action3;
 
             // calculate move direction to pass to character
             if (m_Cam != null)
@@ -71,9 +77,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
-
-
-            Debug.Log("h:" + h + "v:" + v);
             
         }
     }

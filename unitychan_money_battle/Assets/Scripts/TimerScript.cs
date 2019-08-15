@@ -41,7 +41,7 @@ public class TimerScript : MonoBehaviour
             Player1.GetComponent<ItemUse>().enabled = true;
             Player1.GetComponent<ThirdPersonCharacter>().enabled = true;
             Player1.GetComponent<PointCoin>().enabled = true;
-            Player2.GetComponent<ThirdPersonUserControl2>().enabled = true;
+            Player2.GetComponent<ThirdPersonUserControl>().enabled = true;
             Player2.GetComponent<ItemUse>().enabled = true;
             Player2.GetComponent<ThirdPersonCharacter>().enabled = true;
             Player2.GetComponent<PointCoin2>().enabled = true;
@@ -53,7 +53,7 @@ public class TimerScript : MonoBehaviour
             Player1.GetComponent<ItemUse>().enabled = false;
             Player1.GetComponent<ThirdPersonCharacter>().enabled = false;
             Player1.GetComponent<PointCoin>().enabled = false;
-            Player2.GetComponent<ThirdPersonUserControl2>().enabled = false;
+            Player2.GetComponent<ThirdPersonUserControl>().enabled = false;
             Player2.GetComponent<ItemUse>().enabled = false;
             Player2.GetComponent<ThirdPersonCharacter>().enabled = false;
             Player2.GetComponent<PointCoin2>().enabled = false;
