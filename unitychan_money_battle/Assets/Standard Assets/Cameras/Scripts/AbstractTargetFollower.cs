@@ -17,7 +17,6 @@ namespace UnityStandardAssets.Cameras
         [SerializeField] private UpdateType m_UpdateType;         // stores the selected update type
 
         protected Rigidbody targetRigidbody;
-        public GameObject targetObjname;
 
 
         protected virtual void Start()
@@ -83,7 +82,7 @@ namespace UnityStandardAssets.Cameras
         public void FindAndTargetPlayer()
         {
             // auto target an object tagged player, if no target has been assigned
-            var targetObj = targetObjname;
+            var targetObj = GameObject.Find("UnityChanPlayer0");
             if (targetObj)
             {
                 SetTarget(targetObj.transform);

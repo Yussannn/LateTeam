@@ -37,8 +37,8 @@
         const int maxPlayers = 2;
 
         List<Vector3> playerPositions = new List<Vector3>() {
-            new Vector3( 0, 1.5f, -18 ),
-            new Vector3( 0, 1.5f, 18 ),
+            new Vector3(0,0.15f,0),
+            new Vector3(3,0.15f,0)
         };
 
         public List<ThirdPersonUserControl> players = new List<ThirdPersonUserControl>(maxPlayers);
@@ -114,7 +114,7 @@
 
                 var gameObject = (GameObject)Instantiate(playerPrefab, playerPosition, Quaternion.identity);
                 gameObject.name = "UnityChanPlayer" + players.Count;
-                followCamera.targetObjname = GameObject.Find(gameObject.name);
+                //followCamera.targetObjname = GameObject.Find(gameObject.name);
                 var player = gameObject.GetComponent<ThirdPersonUserControl>();
                 player.Device = inputDevice;
                 players.Add(player);

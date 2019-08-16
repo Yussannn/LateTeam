@@ -39,8 +39,7 @@ public class Result : MonoBehaviour
     public static bool ScEnd;
     void Start()
     {
-        Player1Point = PointCoin.playerPoint;
-        Player2Point = PointCoin2.playerPoint;
+        //Player1Point = PtCalculation.
         win1P = false;
         win2P = false;
         Result_T = false;

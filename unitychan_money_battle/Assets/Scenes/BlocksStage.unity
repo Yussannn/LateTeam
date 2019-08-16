@@ -7947,7 +7947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31309eef1ca88d04f8ecafdf1bfc7bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: Infinity
+  Timer: 60
   TimerText: {fileID: 902808536}
   FinishText: {fileID: 478660745}
 --- !u!1001 &910082745
@@ -16583,7 +16583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -16.45
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17862,10 +17862,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2051268624}
   - component: {fileID: 2051268623}
+  - component: {fileID: 2051268625}
   m_Layer: 0
-  m_Name: ForChecksObj
+  m_Name: ScriptsObj
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: b6944b8ec29ad124c9ebbe7b111fdfd5, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -17881,7 +17882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d3314921af005428c9b01787cf6613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 6186907228087240288, guid: 9eb3ed63ce8012e4cb5e7d7a12604e22,
+  playerPrefab: {fileID: 7325243926426031956, guid: 8abb28e857428cc4cba5a791a16271fb,
     type: 3}
 --- !u!4 &2051268624
 Transform:
@@ -17897,6 +17898,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2051268625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051268622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127a3dce1e323454aaf9f8fb0edd826e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1Pt: 0
+  Player2Pt: 0
+  Player3Pt: 0
+  Player4Pt: 0
+  player1Text: {fileID: 2043217690}
+  player2Text: {fileID: 915196174}
+  player3Text: {fileID: 0}
+  player4Text: {fileID: 0}
 --- !u!1001 &2065897873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18351,7 +18372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100004, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_Name
-      value: MultipurposeCameraRig (1)
+      value: MultipurposeCameraRig2P
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_NormalizedViewPortRect.x

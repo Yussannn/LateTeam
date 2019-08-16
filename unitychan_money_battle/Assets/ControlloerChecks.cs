@@ -112,15 +112,6 @@
 
                 var gameObject = (GameObject)Instantiate(playerPrefab, playerPosition, Quaternion.identity);
                 gameObject.name = "UnityChanPlayer" + players.Count;
-                var Scripts = "PointCoin" + players.Count;
-                if(players.Count == 0)
-                {
-                    gameObject.AddComponent<PointCoin>();
-                }
-                if(players.Count == 1)
-                {
-                    gameObject.AddComponent<PointCoin2>();
-                }
                 var player = gameObject.GetComponent<ThirdPersonUserControl>();
                 player.Device = inputDevice;
                 players.Add(player);

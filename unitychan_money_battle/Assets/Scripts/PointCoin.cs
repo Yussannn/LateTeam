@@ -5,34 +5,19 @@ using UnityEngine.UI;
 
 public class PointCoin : MonoBehaviour
 {
-    public static int playerPoint;
-    public Text Pointtext;
-    bool coinget;
-
-    void Start()
-    {
-        playerPoint = 0;
-    }
-
-    void Update()
-    {
-        Pointtext.text = "" + playerPoint;
-    }
-
+    PtCalculation colsc;
     void OnCollisionEnter(Collision col)
     {
-        coinget = false;
-        if (col.gameObject.tag == "GoldColin" && !coinget)
+        if (col.gameObject.tag == "GoldColin")
         {
             Destroy(col.gameObject);
-            playerPoint += 2;
-            coinget = true;
+            colsc.GoldAddPoint(gameObject.name);
         }
-        else if (col.gameObject.tag == "SilverCoin" && !coinget)
+        else if (col.gameObject.tag == "SilverCoin")
         {
             Destroy(col.gameObject);
-            playerPoint++;
-            coinget = true;
+            colsc.SilverAddPoint(gameObject.name);
         }
+        Debug.Log(gameObject.name);
     }
 }
