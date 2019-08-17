@@ -13,6 +13,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
+        private float v;
+        private float h;
+        private bool crouch;
         public InputDevice Device { get; set; }
 
         private void Start()
@@ -38,7 +41,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!m_Jump)
             {
-                m_Jump = Device.Action4.IsPressed;
+                if (Device == null)
+                {
+                    if(gameObject.name == "UnityChanPlayer0")
+                    {
+                        m_Jump = CrossPlatformInputManager.GetButton("Jump");
+                    }
+                    else if(gameObject.name == "UnityChanPlayer1")
+                    {
+                        m_Jump = CrossPlatformInputManager.GetButton("Jump_2");
+                    }
+                }
+                else
+                {
+                    m_Jump = Device.Action4.IsPressed;
+                }
             }
         }
 
@@ -52,11 +69,27 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             float v = CrossPlatformInputManager.GetAxis("joystick 1 analog 0");
             bool crouch = CrossPlatformInputManager.GetButton("Crouching");
             */
-
-            float h = Device.LeftStickX;
-            float v = Device.LeftStickY;
-            bool crouch = Device.Action3;
-
+            if(Device == null)
+            {
+                if(gameObject.name == "UnityChanPlayer0")
+                {
+                    h = CrossPlatformInputManager.GetAxis("Vertical");
+                    v = CrossPlatformInputManager.GetAxis("Horizontal");
+                    crouch = CrossPlatformInputManager.GetButton("Crouching");
+                }
+                else if(gameObject.name == "UnityChanPlayer1")
+                {
+                    h = CrossPlatformInputManager.GetAxis("Vertical_2");
+                    v = CrossPlatformInputManager.GetAxis("Horizontal_2");
+                    crouch = CrossPlatformInputManager.GetButton("Crouching_2");
+                }
+            }
+            else
+            {
+                h = Device.LeftStickX;
+                v = Device.LeftStickY;
+                crouch = Device.Action3;
+            }
             // calculate move direction to pass to character
             if (m_Cam != null)
             {

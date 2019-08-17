@@ -62,7 +62,10 @@
                     CreatePlayer(inputDevice);
                 }
             }
-
+            else if (Input.GetKeyDown(KeyCode.J))
+            {
+                KeybordCreatePlayer();
+            }
         }
 
 
@@ -124,7 +127,22 @@
 
             return null;
         }
+        ThirdPersonUserControl KeybordCreatePlayer()
+        {
+            if(players.Count < maxPlayers)
+            {
+                var playerPosition = playerPositions[0];
+                playerPositions.RemoveAt(0);
 
+                var gameObject = (GameObject)Instantiate(playerPrefab, playerPosition, Quaternion.identity);
+                gameObject.name = "UnityChanPlayer" + players.Count;
+                var player = gameObject.GetComponent<ThirdPersonUserControl>();
+                players.Add(player);
+
+                return player;
+            }
+            return null;
+        }
 
         void RemovePlayer(ThirdPersonUserControl player)
         {
@@ -133,21 +151,22 @@
             player.Device = null;
             Destroy(player.gameObject);
         }
-
-
         void OnGUI()
         {
             const float h = 22.0f;
             var y = 10.0f;
-
-            GUI.Label(new Rect(10, y, 300, y + h), "Active players: " + players.Count + "/" + maxPlayers);
-            y += h;
-
             if (players.Count < maxPlayers)
             {
-                GUI.Label(new Rect(10, y, 300, y + h), "Press a button to join!");
-                y += h;
+                GUI.Label(new Rect(10, y, 300, y + h), "プレイヤー数が足りません！: " + players.Count + "/" + maxPlayers);
             }
+            else
+            {
+                GUI.Label(new Rect(10, y, 300, y + h), "オッケー！: " + players.Count + "/" + maxPlayers);
+            }
+            y += h;
+
+            GUI.Label(new Rect(10, y, 300, y + h), "キーボードは常に使えます");
+            y += h;
         }
     }
 }
