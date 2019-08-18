@@ -41,7 +41,9 @@
             new Vector3(3,0.15f,0)
         };
 
-        public List<ThirdPersonUserControl> players = new List<ThirdPersonUserControl>(maxPlayers);
+        Vector3 playerrot = new Vector3(0, 180, 0);
+
+        [HideInInspector]public List<ThirdPersonUserControl> players = new List<ThirdPersonUserControl>(maxPlayers);
 
 
 
@@ -162,11 +164,13 @@
             else
             {
                 GUI.Label(new Rect(10, y, 300, y + h), "オッケー！: " + players.Count + "/" + maxPlayers);
+                y += h;
+                GUI.Label(new Rect(10, y, 300, y + h), "'Gキー' 又は 'Startボタン' を押して対戦開始！");
+                y += h;
             }
             y += h;
 
-            GUI.Label(new Rect(10, y, 300, y + h), "キーボードは常に使えます");
-            y += h;
+            
         }
     }
 }

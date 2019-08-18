@@ -7,7 +7,7 @@ using UnityEngine;
 public class ImageScript : MonoBehaviour
 {
     float time;
-    SpriteRenderer abutton;
+    Image abutton;
 
     public Sprite before;
     public Sprite after;
@@ -15,7 +15,7 @@ public class ImageScript : MonoBehaviour
     void Start()
     {
         time = 1.0f;
-        abutton = gameObject.GetComponent<SpriteRenderer>();
+        abutton = gameObject.GetComponent<Image>();
     }
 
     void Update()

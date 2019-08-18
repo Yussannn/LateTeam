@@ -13,6 +13,7 @@ public class OneMore : MonoBehaviour
     public GameObject Image;
     public Text UnderText;
     public Text text;
+    public static bool end;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class OneMore : MonoBehaviour
         UnderText.enabled = false;
         text.enabled = false;
         Yes = false;
+        end = true;
     }
 
     void FixedUpdate()

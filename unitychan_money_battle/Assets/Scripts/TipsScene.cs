@@ -7,11 +7,13 @@ public class TipsScene : MonoBehaviour
 {
     float Timer;
     bool onemore;
-
+    bool end;
+    bool JoinToStart;
     void Start()
     {
         Timer = 3f;
         onemore = OneMore.Yes;
+        end = OneMore.end;
     }
 
     void Update()
@@ -20,13 +22,20 @@ public class TipsScene : MonoBehaviour
 
         if(Timer <= 0.0f)
         {
-            if (onemore)
+            if (end)
             {
-                SceneManager.LoadScene("BlocksStage");
+                if (onemore)
+                {
+                    SceneManager.LoadScene("BlocksStage");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Title");
+                }
             }
             else
             {
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("BlocksStage");
             }
         }
     }

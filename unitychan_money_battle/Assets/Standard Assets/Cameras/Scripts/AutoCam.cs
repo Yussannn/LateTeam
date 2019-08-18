@@ -107,6 +107,14 @@ namespace UnityStandardAssets.Cameras
 
         void Update()
         {
+            if(gameObject.name == "MultipurposeCameraRig")
+            {
+                targetobj = GameObject.Find("UnityChanPlayer0");
+            }
+            else if(gameObject.name == "MultipurposeCameraRig2P")
+            {
+                targetobj = GameObject.Find("UnityChanPlayer1");
+            }
         }
     }
 }

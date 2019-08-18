@@ -73,14 +73,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 if(gameObject.name == "UnityChanPlayer0")
                 {
-                    h = CrossPlatformInputManager.GetAxis("Vertical");
-                    v = CrossPlatformInputManager.GetAxis("Horizontal");
+                    h = CrossPlatformInputManager.GetAxis("Horizontal");
+                    v = CrossPlatformInputManager.GetAxis("Vertical");
                     crouch = CrossPlatformInputManager.GetButton("Crouching");
                 }
                 else if(gameObject.name == "UnityChanPlayer1")
                 {
-                    h = CrossPlatformInputManager.GetAxis("Vertical_2");
-                    v = CrossPlatformInputManager.GetAxis("Horizontal_2");
+                    h = CrossPlatformInputManager.GetAxis("Horizontal_2");
+                    v = CrossPlatformInputManager.GetAxis("Vertical_2");
                     crouch = CrossPlatformInputManager.GetButton("Crouching_2");
                 }
             }

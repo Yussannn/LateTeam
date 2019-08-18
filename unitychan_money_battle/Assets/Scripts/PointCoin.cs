@@ -18,6 +18,5 @@ public class PointCoin : MonoBehaviour
             Destroy(col.gameObject);
             colsc.SilverAddPoint(gameObject.name);
         }
-        Debug.Log(gameObject.name);
     }
 }
