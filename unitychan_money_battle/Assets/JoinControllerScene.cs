@@ -56,6 +56,8 @@ public class JoinControllerScene : MonoBehaviour
     {
         posLock.LoadScene();
         posLock2.LoadScene();
+        posLock.enabled = false;
+        posLock2.enabled = false;
         SceneManager.LoadScene("BlocksStage");
     }
 }

@@ -25,5 +25,7 @@ public class PositionLock : MonoBehaviour
     public void LoadScene()
     {
         rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+        rb.constraints = RigidbodyConstraints.FreezeRotationY;
     }
 }

@@ -165,7 +165,7 @@
             {
                 GUI.Label(new Rect(10, y, 300, y + h), "オッケー！: " + players.Count + "/" + maxPlayers);
                 y += h;
-                GUI.Label(new Rect(10, y, 300, y + h), "'Gキー' 又は 'Startボタン' を押して対戦開始！");
+                GUI.Label(new Rect(10, y, 300, y + h), "'Enterキー' 又は 'Startボタン' を押して対戦開始！");
                 y += h;
             }
             y += h;
