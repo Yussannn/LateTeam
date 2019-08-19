@@ -22,9 +22,8 @@ public class PositionLock : MonoBehaviour
 
     }
 
-    void LoadScene()
+    public void LoadScene()
     {
         rb.constraints = RigidbodyConstraints.None;
-        SceneManager.LoadScene("BlocksStage");
     }
 }
