@@ -16,14 +16,31 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private float v;
         private float h;
         private bool crouch;
+        GameObject cam;
         public InputDevice Device { get; set; }
 
         private void Start()
         {
-            // get the transform of the main camera
-            if (Camera.main != null)
+            // get the third person character ( this should never be null due to require component )
+            m_Character = GetComponent<ThirdPersonCharacter>();
+        }
+
+
+        private void Update()
+        {
+
+            if (gameObject.name == "UnityChanPlayer0")
             {
-                m_Cam = Camera.main.transform;
+                cam = GameObject.Find("MultipurposeCameraRig");
+            }
+            else if (gameObject.name == "UnityChanPlayer1")
+            {
+                cam = GameObject.Find("MultipurposeCameraRig2P");
+            }
+            // get the transform of the main camera
+            if (cam != null)
+            {
+                m_Cam = cam.transform;
             }
             else
             {
@@ -32,13 +49,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 // we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
             }
 
-            // get the third person character ( this should never be null due to require component )
-            m_Character = GetComponent<ThirdPersonCharacter>();
-        }
 
-
-        private void Update()
-        {
             if (!m_Jump)
             {
                 if (Device == null)
