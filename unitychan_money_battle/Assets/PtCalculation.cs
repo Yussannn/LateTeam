@@ -5,15 +5,9 @@ using UnityEngine.UI;
 
 public class PtCalculation : MonoBehaviour
 {
-    [HideInInspector] public int Player1Pt;
-    [HideInInspector] public int Player2Pt;
-    [HideInInspector] public int Player3Pt;
-    [HideInInspector] public int Player4Pt;
+    [HideInInspector] public int Player1Pt,Player2Pt;
 
-    public Text player1Text;
-    public Text player2Text;
-    public Text player3Text;
-    public Text player4Text;
+    public Text player1Text,player2Text;
     
     void Start()
     {
@@ -25,42 +19,29 @@ public class PtCalculation : MonoBehaviour
         player2Text.text = Player2Pt.ToString();
     }
 
-    public void SilverAddPoint(string playername)
+    public void SilverAddPoint(GameObject obj)
     {
         const int point = 1;
-        switch (playername) {
-            case "UnityChanPlayer0":
-                Player1Pt += point;
-                break;
-            case "UnityChanPlayer1":
-                Player2Pt += point;
-                break;
-            case "UnityChanPlayer2":
-                Player3Pt += point;
-                break;
-            case "UnityChanPlayer3":
-                Player4Pt += point;
-                break;
+        if(obj.name == "UnityChanPlayer0")
+        {
+            Player1Pt += point;
+        }
+        else if(obj.name == "UnityChanPlayer1")
+        {
+            Player2Pt += point;
         }
     }
 
-    public void GoldAddPoint(string playername)
+    public void GoldAddPoint(GameObject obj)
     {
         const int point = 2;
-        switch (playername)
+        if (obj.name == "UnityChanPlayer0")
         {
-            case "UnityChanPlayer0":
-                Player1Pt += point;
-                break;
-            case "UnityChanPlayer1":
-                Player2Pt += point;
-                break;
-            case "UnityChanPlayer2":
-                Player3Pt += point;
-                break;
-            case "UnityChanPlayer3":
-                Player4Pt += point;
-                break;
+            Player1Pt += point;
+        }
+        else if (obj.name == "UnityChanPlayer1")
+        {
+            Player2Pt += point;
         }
     }
 }
