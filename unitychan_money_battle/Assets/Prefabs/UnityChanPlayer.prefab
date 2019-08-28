@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6188739795074443218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4637713807431530415}
+  m_Layer: 0
+  m_Name: itempos_back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4637713807431530415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188739795074443218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7325243926425734004}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7325243925365768855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7325243926426031700}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.77, y: 0, z: -2.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7325243926425734008}
@@ -2329,6 +2359,7 @@ Transform:
   - {fileID: 7325243926425733992}
   - {fileID: 7325243926425734008}
   - {fileID: 7325243925365768852}
+  - {fileID: 4637713807431530415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -15.01, z: 0}
@@ -2629,10 +2660,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef499b99b077944a9a758e04f834c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A_Item: {fileID: 0}
-  B_Item: {fileID: 0}
-  itempos: {fileID: 0}
-  itemspeed: 100
+  Banana_item: {fileID: 2251614528679200000, guid: 8c5ce57e565a85545b7cf050d9b2b535,
+    type: 3}
+  Shell_item: {fileID: 4520017455704228512, guid: 129ed1c9ed53dd74ba20512c1ed819ba,
+    type: 3}
+  P1_Forward: {fileID: 7325243925365768852}
+  P1_Backward: {fileID: 4637713807431530415}
+  P2_Forward: {fileID: 7325243925365768852}
+  P2_Backward: {fileID: 4637713807431530415}
+  speed: 1000
 --- !u!114 &6162186499945451289
 MonoBehaviour:
   m_ObjectHideFlags: 0
