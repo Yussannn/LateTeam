@@ -3625,8 +3625,8 @@ InputManager:
     m_Name: Item_Select_P1
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: r
     gravity: 1
@@ -3635,14 +3635,14 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 6
     joyNum: 1
   - serializedVersion: 3
     m_Name: Item_Select_P2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: \
     gravity: 1
@@ -3651,7 +3651,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 6
     joyNum: 2
   - serializedVersion: 3
     m_Name: Item_Use_P1
