@@ -38,7 +38,7 @@ public class JoinControllerScene : MonoBehaviour
 
         if (player2)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 tpc.salute = true;
                 tpc2.salute = true;

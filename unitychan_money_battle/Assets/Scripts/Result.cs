@@ -5,36 +5,25 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
-    int Player1Point; //他スクリプトから受け取り
-    int Player2Point;
-    int Player1P;
-    int Player2P;
+    int Player1Point,Player2Point;
+    int Player1P,Player2P;
     public GameObject Result_Text;  
-    public GameObject P1_Text_B;
-    public GameObject P2_Text_B;
-    public Text P1_Point;
-    public Text P2_Point;
+    public GameObject P1_Text_B,P2_Text_B;
+    public Text P1_Point,P2_Point;
     public Text DrawText;
-    public Text P1_Winner;
-    public Text P2_Winner;
+    public Text P1_Winner,P2_Winner;
     public Text OnemoreText;  //①
-    public Vector3 p1pos;
-    public Vector3 p2pos;
-    public GameObject GoldCoin;
-    public GameObject SilverCoin;
+    public Vector3 p1pos,p2pos;
+    public GameObject GoldCoin,SilverCoin;
     float waitTime;
 
-    bool win1P;
-    bool win2P;
+    bool win1P,win2P;
     bool Result_T;
     bool Player_T;
-    bool CountStart;
-    bool CountEnd;
+    bool CountStart,CountEnd;
     bool draw;
-    bool player1Count;
-    bool player2Count;
-    bool player1CountReady;
-    bool player2CountReady;
+    bool player1Count,player2Count;
+    bool player1CountReady,player2CountReady;
     public bool battle;　　//①
     public static bool ScEnd;
     void Start()
