@@ -12,6 +12,7 @@ TagManager:
   - MainCamera2
   - Fllor
   - Floor
+  - Item
   layers:
   - Default
   - TransparentFX

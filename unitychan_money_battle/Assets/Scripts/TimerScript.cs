@@ -7,19 +7,21 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class TimerScript : MonoBehaviour
 {
-    public float Timer = 30.0f;
+    public float Timer = 180.0f;
     public Text TimerText;
     public GameObject FinishText;
     GameObject player1,player2;
     ControllerChecks conSc;
     bool color = false;
-    bool finish;
+    bool finish = false;
 
-    bool gameStart;
+    bool gameStart = false;
 
     void Start()
     {
         FinishText.SetActive(false);
+        player1.SetActive(true);
+        player2.SetActive(true);
         player1 = GameObject.Find("UnityChanPlayer0");
         player2 = GameObject.Find("UnityChanPlayer1");
         player1.GetComponent<ThirdPersonUserControl>().enabled = false;
@@ -68,6 +70,11 @@ public class TimerScript : MonoBehaviour
     }
     void ResultSceneMove()
     {
+        player1.SetActive(false);
+        player2.SetActive(false);
+        Destroy(GameObject.FindWithTag("Item"));
+        Destroy(GameObject.FindWithTag("SilverCoin"));
+        Destroy(GameObject.FindWithTag("GoldCoin"));
         SceneManager.LoadScene("ResultScene");
     }
 }

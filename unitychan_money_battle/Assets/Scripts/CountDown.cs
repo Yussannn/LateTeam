@@ -6,16 +6,23 @@ using UnityEngine;
 public class CountDown : MonoBehaviour
 {
     float count = 2f;
-    bool Ready;
-    public static bool CountEnd;
+    bool Ready = false;
+    public static bool CountEnd = false;
     public Text text;
     public Text text2;
     public Text text3;
-    int a_color;
+    int a_color = 255;
     void Start()
     {
         Ready = false;
+        CountEnd = false;
+        count = 2f;
         a_color = 255;
+
+        text.GetComponent<CountDown>().enabled = true;
+        text.enabled = true;
+        text2.enabled = true;
+        text3.enabled = true;
     }
     void Update()
     {

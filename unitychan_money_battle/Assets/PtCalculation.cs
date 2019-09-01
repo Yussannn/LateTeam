@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class PtCalculation : MonoBehaviour
 {
-    [HideInInspector] public int Player1Pt,Player2Pt;
+    [HideInInspector] public static int Player1Pt = 0,Player2Pt= 0;
 
     public Text player1Text,player2Text;
     
     void Start()
     {
-
+        Player1Pt = 0;
+        Player2Pt = 0;
     }
     void Update()
     {
@@ -43,5 +44,14 @@ public class PtCalculation : MonoBehaviour
         {
             Player2Pt += point;
         }
+    }
+
+    public static int GetPointP1()
+    {
+        return Player1Pt;
+    }
+    public static int GetPointP2()
+    {
+        return Player2Pt;
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
-    int Player1Point,Player2Point;
-    int Player1P,Player2P;
+    int Player1Point = 0,Player2Point = 0;
+    int Player1P = 0,Player2P = 0;
     public GameObject Result_Text;  
     public GameObject P1_Text_B,P2_Text_B;
     public Text P1_Point,P2_Point;
@@ -15,17 +15,20 @@ public class Result : MonoBehaviour
     public Text OnemoreText;  //①
     public Vector3 p1pos,p2pos;
     public GameObject GoldCoin,SilverCoin;
-    float waitTime;
 
-    bool win1P,win2P;
-    bool Result_T;
-    bool Player_T;
-    bool CountStart,CountEnd;
-    bool draw;
-    bool player1Count,player2Count;
-    bool player1CountReady,player2CountReady;
-    public bool battle;　　//①
-    public static bool ScEnd;
+    public static int p1score = 0, p2score= 0;
+
+    float waitTime = 2.0f;
+
+    bool win1P = false,win2P = false;
+    bool Result_T = false;
+    bool Player_T = false;
+    bool CountStart= false,CountEnd=false;
+    bool draw = false;
+    bool player1Count = false, player2Count = false;
+    bool player1CountReady = false,player2CountReady = false;
+    public bool battle = false;　　//①
+    public static bool ScEnd = false;
     void Start()
     {
         //Player1Point = PtCalculation.
@@ -37,10 +40,14 @@ public class Result : MonoBehaviour
         waitTime = 2.0f;
         P1_Winner.enabled = false;
         P2_Winner.enabled = false;
+
+        Player1Point = PtCalculation.GetPointP1();
+        Player2Point = PtCalculation.GetPointP2();
     }
 
     void Update()
     {
+
         waitTime -= Time.deltaTime;
         P1_Point.text = Player1P.ToString();
         P2_Point.text = Player2P.ToString();
