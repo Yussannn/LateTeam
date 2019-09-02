@@ -19,11 +19,13 @@ public class TimerScript : MonoBehaviour
 
     void Start()
     {
+        player1 = GameObject.Find("UnityChanPlayer0");
+        player2 = GameObject.Find("UnityChanPlayer1");
+
         FinishText.SetActive(false);
         player1.SetActive(true);
         player2.SetActive(true);
-        player1 = GameObject.Find("UnityChanPlayer0");
-        player2 = GameObject.Find("UnityChanPlayer1");
+
         player1.GetComponent<ThirdPersonUserControl>().enabled = false;
         player2.GetComponent<ThirdPersonUserControl>().enabled = false;
         player1.GetComponent<ItemUse>().enabled = false;
@@ -31,9 +33,11 @@ public class TimerScript : MonoBehaviour
         player1.GetComponent<PointCoin>().enabled = false;
         player2.GetComponent<PointCoin>().enabled = false;
     }
+
     void FixedUpdate()
     {
         gameStart = CountDown.CountEnd;
+
         if (gameStart)
         {
             Timer -= Time.deltaTime;
@@ -70,11 +74,11 @@ public class TimerScript : MonoBehaviour
     }
     void ResultSceneMove()
     {
-        player1.SetActive(false);
-        player2.SetActive(false);
         Destroy(GameObject.FindWithTag("Item"));
         Destroy(GameObject.FindWithTag("SilverCoin"));
-        Destroy(GameObject.FindWithTag("GoldCoin"));
+        Destroy(GameObject.FindWithTag("GoldColin"));
         SceneManager.LoadScene("ResultScene");
+        player1.SetActive(false);
+        player2.SetActive(false);
     }
 }

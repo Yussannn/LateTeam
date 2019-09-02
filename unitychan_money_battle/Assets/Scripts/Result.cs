@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour
 {
@@ -155,16 +156,16 @@ public class Result : MonoBehaviour
     {
         P1_Winner.enabled = true;
         P2_Winner.enabled = true;
-        Invoke("End",2);
+        Invoke("End",5);
     }
     void DrawText_Active()
     {
         DrawText.color = new Color(DrawText.color.r, DrawText.color.g, DrawText.color.b, 255);
-        Invoke("End", 2);
+        Invoke("End", 5);
     }
 
     void End()
     {
-        ScEnd = true;
+        SceneManager.LoadScene("Ending");
     }
 }
