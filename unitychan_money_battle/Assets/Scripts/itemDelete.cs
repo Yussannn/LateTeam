@@ -20,6 +20,10 @@ public class itemDelete : MonoBehaviour
 
     void Update()
     {
+        if(Mathf.Approximately(Time.timeScale, 0F))
+        {
+            return;
+        }
         if(itemcol <= 0)
         {
             Destroy(gameObject);

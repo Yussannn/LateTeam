@@ -26,24 +26,28 @@ public class ItemSprite : MonoBehaviour
         P1Obj = GameObject.Find("P1sprite");
         P2Obj = GameObject.Find("P2sprite");
 
-        if (p1ItemNumber == 0)
+        if (Mathf.Approximately(Time.timeScale, 0f))
         {
-            P1Obj.GetComponent<Image>().sprite = Banana;
+            return;
         }
-        else if (p1ItemNumber == 1)
+        else
         {
-            P1Obj.GetComponent<Image>().sprite = Shell;
+            if (p1ItemNumber == 0)
+            {
+                P1Obj.GetComponent<Image>().sprite = Banana;
+            }
+            else if (p1ItemNumber == 1)
+            {
+                P1Obj.GetComponent<Image>().sprite = Shell;
+            }
+            if (p2ItemNumber == 0)
+            {
+                P2Obj.GetComponent<Image>().sprite = Banana;
+            }
+            else if (p2ItemNumber == 1)
+            {
+                P2Obj.GetComponent<Image>().sprite = Shell;
+            }
         }
-        if (p2ItemNumber == 0)
-        {
-            P2Obj.GetComponent<Image>().sprite = Banana;
-        }
-        else if (p2ItemNumber == 1)
-        {
-            P2Obj.GetComponent<Image>().sprite = Shell;
-        }
-
-        Debug.Log("P1:" + p1ItemNumber);
-        Debug.Log("P2:" + p2ItemNumber);
     }
 }

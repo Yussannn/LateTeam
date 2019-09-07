@@ -8,12 +8,10 @@ public class ItemUse : MonoBehaviour
 {
     public GameObject Banana_item,Shell_item; //生成するオブジェクト
 
-    public ItemSprite itemSprite; //アイテム欄表示
-
     private bool p1selected,p2selected; //選択スイッチ
 
-    public Transform P1_Forward,P1_Backward;
-    public Transform P2_Forward,P2_Backward; //生成する位置
+    public Transform Forward,Backward;
+    //public Transform P2_Forward,P2_Backward; //生成する位置
 
     public float speed = 1000; //アイテムのスピード
 
@@ -32,7 +30,7 @@ public class ItemUse : MonoBehaviour
     private GameObject settingObjectP2;
 
     ItemUse itemUse;
-    public int P1number, P2number;
+    //public int P1number, P2number;
     void Start()
     {
         ItemList.Add(Banana_item);
@@ -41,81 +39,87 @@ public class ItemUse : MonoBehaviour
 
     void Update()
     {
-        if (!p1selected && CrossPlatformInputManager.GetButtonDown("Item_Select_P1"))
+        if (Mathf.Approximately(Time.timeScale, 0f))
         {
-            p1selected = true;
-            select_NumberP1 = CrossPlatformInputManager.GetAxisRaw("Item_Select_P1");
+            return;
         }
-        if (!p2selected && CrossPlatformInputManager.GetButtonDown("Item_Select_P2"))
+        else
         {
-            p2selected = true;
-            select_NumberP2 = CrossPlatformInputManager.GetAxisRaw("Item_Select_P2");
-        }
-
-        if (p2selected)
-        {
-            if (CrossPlatformInputManager.GetButtonUp("Item_Select_P2"))
+            if (!p1selected && CrossPlatformInputManager.GetButtonDown("Item_Select_P1"))
             {
-                p2selected = false;
+                p1selected = true;
+                select_NumberP1 = CrossPlatformInputManager.GetAxisRaw("Item_Select_P1");
             }
-        }
-        if (select_NumberP1 > 0)
-        {
-            if (p1_ListNumber == MaxValue -1) p1_ListNumber = 0;
-            else p1_ListNumber++;
-        }
-        else if (select_NumberP1 < 0)
-        {
-            if (p1_ListNumber == 0) p1_ListNumber = MaxValue - 1;
-            else p1_ListNumber--;
-        }
-
-        if (select_NumberP2 > 0)
-        {
-            if (p2_ListNumber == MaxValue - 1) p2_ListNumber = 0;
-            else p2_ListNumber++;
-        }
-        else if (select_NumberP2 < 0)
-        {
-            if (p2_ListNumber == 0) p2_ListNumber = MaxValue - 1;
-            else p2_ListNumber--;
-        }
-
-        if (CrossPlatformInputManager.GetButton("Item_Use_P1"))
-        {
-            if (!usetimep1)
+            if (!p2selected && CrossPlatformInputManager.GetButtonDown("Item_Select_P2"))
             {
-                P1_ItemUse(settingObjectP1);
-                usetimep1 = true;
+                p2selected = true;
+                select_NumberP2 = CrossPlatformInputManager.GetAxisRaw("Item_Select_P2");
             }
 
-        }
-        if (CrossPlatformInputManager.GetButtonUp("Item_Use_P1"))
-        {
-            usetimep1 = false;
-        }
-        if (CrossPlatformInputManager.GetButton("Item_Use_P2"))
-        {
-            if (!usetimep2)
+            if (p2selected)
             {
-                P2_ItemUse(settingObjectP2);
-                usetimep2 = true;
+                if (CrossPlatformInputManager.GetButtonUp("Item_Select_P2"))
+                {
+                    p2selected = false;
+                }
+            }
+            if (select_NumberP1 > 0)
+            {
+                if (p1_ListNumber == MaxValue - 1) p1_ListNumber = 0;
+                else p1_ListNumber++;
+            }
+            else if (select_NumberP1 < 0)
+            {
+                if (p1_ListNumber == 0) p1_ListNumber = MaxValue - 1;
+                else p1_ListNumber--;
+            }
+
+            if (select_NumberP2 > 0)
+            {
+                if (p2_ListNumber == MaxValue - 1) p2_ListNumber = 0;
+                else p2_ListNumber++;
+            }
+            else if (select_NumberP2 < 0)
+            {
+                if (p2_ListNumber == 0) p2_ListNumber = MaxValue - 1;
+                else p2_ListNumber--;
+            }
+
+            if (CrossPlatformInputManager.GetButton("Item_Use_P1"))
+            {
+                if (!usetimep1)
+                {
+                    P1_ItemUse(settingObjectP1);
+                    usetimep1 = true;
+                }
+
+            }
+            if (CrossPlatformInputManager.GetButtonUp("Item_Use_P1"))
+            {
+                usetimep1 = false;
+            }
+            if (CrossPlatformInputManager.GetButton("Item_Use_P2"))
+            {
+                if (!usetimep2)
+                {
+                    P2_ItemUse(settingObjectP2);
+                    usetimep2 = true;
+                }
+            }
+            if (CrossPlatformInputManager.GetButtonUp("Item_Use_P2"))
+            {
+                usetimep2 = false;
             }
         }
-        if (CrossPlatformInputManager.GetButtonUp("Item_Use_P2"))
-        {
-            usetimep2 = false;
-        }
 
-        if (gameObject.name == "UnityChanPlayer0")
-            settingObjectP1 = ItemList[p1_ListNumber];
-        else if (gameObject.name == "UnityChanPlayer1")
-            settingObjectP2 = ItemList[p2_ListNumber];
+            if (gameObject.name == "UnityChanPlayer0")
+                settingObjectP1 = ItemList[p1_ListNumber];
+            else if (gameObject.name == "UnityChanPlayer1")
+                settingObjectP2 = ItemList[p2_ListNumber];
 
 
-        if (Item_p1_B > maxItem) Item_p1_B = maxItem; if (Item_p1_S > maxItem) Item_p1_S = maxItem;
-        if (Item_p2_B > maxItem) Item_p2_B = maxItem; if (Item_p2_S > maxItem) Item_p2_S = maxItem;
-
+            if (Item_p1_B > maxItem) Item_p1_B = maxItem; if (Item_p1_S > maxItem) Item_p1_S = maxItem;
+            if (Item_p2_B > maxItem) Item_p2_B = maxItem; if (Item_p2_S > maxItem) Item_p2_S = maxItem;
 
     }
 
@@ -124,7 +128,7 @@ public class ItemUse : MonoBehaviour
         if(obj == Banana_item && Item_p1_B > 0)
         {
             GameObject itemsP1 = Instantiate(obj) as GameObject;
-            itemsP1.transform.position = P1_Backward.position;
+            itemsP1.transform.position = Backward.position;
             Item_p1_B--;
         }
         else if(obj == Shell_item && Item_p1_S > 0)
@@ -134,7 +138,7 @@ public class ItemUse : MonoBehaviour
             Vector3 force;
             force = gameObject.transform.forward * speed;
             itemsP1.GetComponent<Rigidbody>().AddForce(force);
-            itemsP1.transform.position = P2_Forward.position;
+            itemsP1.transform.position = Forward.position;
             Item_p1_S--;
         }
     }
@@ -145,7 +149,7 @@ public class ItemUse : MonoBehaviour
         if(obj == Banana_item && Item_p2_B > 0)
         {
             GameObject itemsP2 = Instantiate(obj) as GameObject;
-            itemsP2.transform.position = P2_Backward.position;
+            itemsP2.transform.position = Backward.position;
             Item_p2_B--;
         }
         else if(obj == Shell_item && Item_p2_S > 0)
@@ -154,7 +158,7 @@ public class ItemUse : MonoBehaviour
             Vector3 force;
             force = gameObject.transform.forward * speed;
             itemsP2.GetComponent<Rigidbody>().AddForce(force);
-            itemsP2.transform.position = P1_Backward.position;
+            itemsP2.transform.position = Forward.position;
             Item_p2_S--;
         }
     }

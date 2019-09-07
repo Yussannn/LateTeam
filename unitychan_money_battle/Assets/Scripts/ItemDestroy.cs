@@ -13,9 +13,16 @@ public class ItemDestroy : MonoBehaviour
 
     void Update()
     {
-        if(times == 0)
+        if (Mathf.Approximately(Time.timeScale, 0f))
         {
-            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            if (times == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     

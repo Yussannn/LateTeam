@@ -66,7 +66,6 @@ public class SpaceToStart: MonoBehaviour
     {
         Destroy(gameObject);
         destroyCheck = true;
-        SceneManager.LoadScene("JoinController");
     }
 
     //Alpha値を更新してColorを返す

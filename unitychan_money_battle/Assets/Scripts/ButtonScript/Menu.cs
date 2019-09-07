@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    Button Yes;
-    Button No;
+    [SerializeField]Button Yes;
+    [SerializeField]Button No;
 
     void Start()
     {
-        Yes = GameObject.Find("/ButtonCanvas/YesButton").GetComponent<Button>();
-        No = GameObject.Find("/ButtonCanvas/NoButton").GetComponent<Button>();
-
+        Yes = GameObject.Find("/TitleButtonCanvas(Clone)/YesButton").GetComponent<Button>();
+        No = GameObject.Find("/TitleButtonCanvas(Clone)/NoButton").GetComponent<Button>();
         Yes.Select();
     }
+
+    
 }
