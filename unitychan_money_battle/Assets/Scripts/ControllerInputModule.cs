@@ -37,7 +37,7 @@ public class ControllerInputModule : BaseInputModule
     /// Name of the horizontal axis for movement (if axis events are used).
     /// </summary>
     public string horizontalAxis
-    {
+    {  
         get { return m_HorizontalAxis; }
         set { m_HorizontalAxis = value; }
     }

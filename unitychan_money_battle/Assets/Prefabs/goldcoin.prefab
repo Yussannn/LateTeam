@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7959365360258242412}
   - component: {fileID: 7959365360258242416}
   - component: {fileID: 7959365360258242417}
+  - component: {fileID: 4177701040051330203}
   m_Layer: 0
   m_Name: goldcoin
   m_TagString: GoldColin
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41fb6e297c72c6149bb01a3f1e7407bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4177701040051330203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959365360411890008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b29c6a92e1bbcd438e06ebcd1bcfbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7959365360411890010

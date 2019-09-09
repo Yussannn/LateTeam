@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 368167289394522628}
   - component: {fileID: 408724501780149840}
   - component: {fileID: 4720046584099936406}
+  - component: {fileID: 2737156697338002143}
   m_Layer: 0
   m_Name: bananaKai
   m_TagString: Item
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   times: 5
+--- !u!114 &2737156697338002143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251614528679200000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b29c6a92e1bbcd438e06ebcd1bcfbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2251614528679200006
 GameObject:
   m_ObjectHideFlags: 0

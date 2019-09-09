@@ -2337,6 +2337,7 @@ GameObject:
   - component: {fileID: 7325243925415067488}
   - component: {fileID: 6162186499945451289}
   - component: {fileID: 540450667573211352}
+  - component: {fileID: 3065238091475649672}
   m_Layer: 0
   m_Name: UnityChanPlayer
   m_TagString: Player
@@ -2664,14 +2665,11 @@ MonoBehaviour:
     type: 3}
   Shell_item: {fileID: 4520017455704228512, guid: 129ed1c9ed53dd74ba20512c1ed819ba,
     type: 3}
-  itemSprite: {fileID: 0}
   Forward: {fileID: 7325243925365768852}
   Backward: {fileID: 4637713807431530415}
   speed: 1000
   p1_ListNumber: 0
   p2_ListNumber: 0
-  P1number: 0
-  P2number: 0
 --- !u!114 &6162186499945451289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2694,6 +2692,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159eed1ed37a2d74d96bbc911d80e0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3065238091475649672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7325243926426031956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b29c6a92e1bbcd438e06ebcd1bcfbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7325243926426031958

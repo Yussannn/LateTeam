@@ -9,6 +9,12 @@ public class ButtonFunction : MonoBehaviour
 {
     GameObject scriptsObj;
     [SerializeField] GameObject firstSelect;
+    GameObject PauseCancelUIInstanse;
+
+    private void Start()
+    {
+        PauseCancelUIInstanse = GameObject.Find("BackButtonCanvas(Clone)");
+    }
 
     public void ActivateOrNotActivate(bool flag)
     {
@@ -29,5 +35,15 @@ public class ButtonFunction : MonoBehaviour
     public void Tutorial(bool tutorial)
     {
 
+    }
+
+    public void Cancel()
+    {
+        SceneManager.LoadScene("Ending");
+    }
+
+    public void Destroy()
+    {
+        Destroy(PauseCancelUIInstanse);
     }
 }

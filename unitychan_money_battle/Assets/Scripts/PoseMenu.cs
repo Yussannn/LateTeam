@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PoseMenu : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PoseMenu : MonoBehaviour
     GameObject pauseUIInstance;
     [SerializeField] GameObject titleUIPrefab;
     GameObject titleUIInstance;
+    bool flag;
+    [SerializeField] GameObject firstSelect;
 
 
     void Start()
@@ -28,12 +31,17 @@ public class PoseMenu : MonoBehaviour
                 if(pauseUIInstance == null)
                 {
                     pauseUIInstance = GameObject.Instantiate(pauseUIPrefab) as GameObject;
-                    Time.timeScale = 0f;
+                    Pauser.Pause();
                 }
                 else if(titleUIPrefab == null)
                 {
                     Destroy(pauseUIInstance);
-                    Time.timeScale = 1f;
+                    Pauser.Resume();
+                }
+                else
+                {
+                    Destroy(pauseUIInstance);
+                    Pauser.Resume();
                 }
             }
             if (CrossPlatformInputManager.GetButtonDown("TitleButton"))
@@ -42,11 +50,23 @@ public class PoseMenu : MonoBehaviour
                 {
                     return;
                 }
-                else
+                else if(titleUIInstance == null)
                 {
                     titleUIInstance = GameObject.Instantiate(titleUIPrefab) as GameObject;
+                    firstSelect = GameObject.Find("YesButton");
                 }
             }
+        }
+    } 
+    public void ActivateOrNotActivate(bool flag)
+    {
+        for (var i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<Button>().interactable = flag;
+        }
+        if (flag)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelect);
         }
     }
 

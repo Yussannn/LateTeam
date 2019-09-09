@@ -35,7 +35,7 @@ public class TipsScene : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("BlocksStage");
+                SceneManager.LoadScene("Title");
             }
         }
     }
