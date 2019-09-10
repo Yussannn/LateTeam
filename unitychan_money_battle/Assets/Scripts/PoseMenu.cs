@@ -16,9 +16,11 @@ public class PoseMenu : MonoBehaviour
     bool flag;
     [SerializeField] GameObject firstSelect;
 
+    Pausable pausable;
 
     void Start()
     {
+        pausable = GameObject.Find("PauserObj").GetComponent<Pausable>();
     }
     void Update()
     {
@@ -28,20 +30,20 @@ public class PoseMenu : MonoBehaviour
         {
             if (CrossPlatformInputManager.GetButtonDown("POSE"))
             {
-                if(pauseUIInstance == null)
+                if (pauseUIInstance == null)
                 {
                     pauseUIInstance = GameObject.Instantiate(pauseUIPrefab) as GameObject;
-                    Pauser.Pause();
+                    pausable.pausing = true;
                 }
-                else if(titleUIPrefab == null)
+                else if (titleUIPrefab == null)
                 {
                     Destroy(pauseUIInstance);
-                    Pauser.Resume();
+                    pausable.pausing = false;
                 }
                 else
                 {
                     Destroy(pauseUIInstance);
-                    Pauser.Resume();
+                    pausable.pausing = false;
                 }
             }
             if (CrossPlatformInputManager.GetButtonDown("TitleButton"))
