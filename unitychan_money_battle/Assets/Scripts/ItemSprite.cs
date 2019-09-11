@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemSprite : MonoBehaviour
 {
-
+    GameObject player1,player2;
     public Sprite Shell, Banana; //画像
     ItemUse itemUsep1,itemUsep2; //他スクリプト
     GameObject P1Obj, P2Obj; //オブジェクト
@@ -15,12 +15,14 @@ public class ItemSprite : MonoBehaviour
     {
         P1Obj = GameObject.Find("P1sprite");
         P2Obj = GameObject.Find("P2sprite");
+        player1 = GameObject.Find("UnityChanPlayer0");
+        player2 = GameObject.Find("UnityChanPlayer1");
     }
 
     void Update()
     {
-        itemUsep1 = GameObject.Find("UnityChanPlayer0").GetComponent<ItemUse>();
-        itemUsep2 = GameObject.Find("UnityChanPlayer1").GetComponent<ItemUse>();
+        itemUsep1 = player1.GetComponent<ItemUse>();
+        itemUsep2 = player2.GetComponent<ItemUse>();
         p1ItemNumber = itemUsep1.p1_ListNumber;
         p2ItemNumber = itemUsep2.p2_ListNumber;
         P1Obj = GameObject.Find("P1sprite");

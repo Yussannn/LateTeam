@@ -13,6 +13,7 @@ TagManager:
   - Fllor
   - Floor
   - Item
+  - DeadArea
   layers:
   - Default
   - TransparentFX

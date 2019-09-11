@@ -30,8 +30,8 @@ public class TimerScript : MonoBehaviour
         player2.GetComponent<ThirdPersonUserControl>().enabled = false;
         player1.GetComponent<ItemUse>().enabled = false;
         player2.GetComponent<ItemUse>().enabled = false;
-        player1.GetComponent<PointCoin>().enabled = false;
-        player2.GetComponent<PointCoin>().enabled = false;
+        player1.GetComponent<ColiderScript>().enabled = false;
+        player2.GetComponent<ColiderScript>().enabled = false;
     }
 
     void FixedUpdate()
@@ -46,8 +46,8 @@ public class TimerScript : MonoBehaviour
             player2.GetComponent<ThirdPersonUserControl>().enabled = true;
             player1.GetComponent<ItemUse>().enabled = true;
             player2.GetComponent<ItemUse>().enabled = true;
-            player1.GetComponent<PointCoin>().enabled = true;
-            player2.GetComponent<PointCoin>().enabled = true;
+            player1.GetComponent<ColiderScript>().enabled = true;
+            player2.GetComponent<ColiderScript>().enabled = true;
         }
         if(Timer <= 0.1f)
         {
@@ -57,8 +57,8 @@ public class TimerScript : MonoBehaviour
             player2.GetComponent<ThirdPersonUserControl>().enabled = false;
             player1.GetComponent<ItemUse>().enabled = false;
             player2.GetComponent<ItemUse>().enabled = false;
-            player1.GetComponent<PointCoin>().enabled = false;
-            player2.GetComponent<PointCoin>().enabled = false;
+            player1.GetComponent<ColiderScript>().enabled = false;
+            player2.GetComponent<ColiderScript>().enabled = false;
         }
         if (Timer <= 10f)
         {
