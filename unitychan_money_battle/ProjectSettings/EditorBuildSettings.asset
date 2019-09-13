@@ -9,17 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/credit.unity
     guid: c11d81ab7774fcd468d18b3c73afc669
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/Scenes/Stages/Title.unity
     guid: c669c164447b72941acadd55a05f4109
   - enabled: 1
     path: Assets/Scenes/JoinController.unity
     guid: e5893e28a7db4304a8d529146e489d92
-  - enabled: 1
-    path: Assets/Scenes/TutorialJoinController.unity
-    guid: 02e2968c8356b0b43b5c28ab8d49a849
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: b1319c80018aba94585425609639b8fd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Stages/BlocksStage.unity
     guid: 9769301b91075c54a86c4e9cfe21aecb
