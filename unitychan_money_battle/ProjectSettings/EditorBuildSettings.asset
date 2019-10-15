@@ -14,12 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JoinController.unity
     guid: e5893e28a7db4304a8d529146e489d92
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Stages/BlocksStage.unity
     guid: 9769301b91075c54a86c4e9cfe21aecb
