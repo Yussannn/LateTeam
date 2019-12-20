@@ -26,8 +26,8 @@ namespace UnityChan
 		// 以下キャラクターコントローラ用パラメタ
 		// 前進速度
 		public float forwardSpeed = 7.0f;
-		// 後退速度
-		public float backwardSpeed = 2.0f;
+        // 後退速度
+        public float backwardSpeed = 2.0f;
 		// 旋回速度
 		public float rotateSpeed = 2.0f;
 		// ジャンプ威力

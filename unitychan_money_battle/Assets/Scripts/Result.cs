@@ -46,6 +46,7 @@ public class Result : MonoBehaviour
         Player2Point = PtCalculation.GetPointP2();
     }
 
+
     void Update()
     {
 
